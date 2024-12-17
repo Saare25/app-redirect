@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Redirect</title>
+</head>
+<body>
+  <script>
+    // Replace these with your actual game links
+    var androidLink = "https://play.google.com/store/apps/details?id=com.abi.banana.survival.master&hl=en";
+    var iosLink = "https://apps.apple.com/ua/app/456-survival-challenging-games/id6470453465";
+
+    // Detect user agent
+    var userAgent = navigator.userAgent.toLowerCase();
+
+    if (userAgent.indexOf("android") > -1) {
+      // If Android device
+      window.location.href = androidLink;
+    } else if (/iphone|ipad|ipod/.test(userAgent)) {
+      // If iOS device
+      window.location.href = iosLink;
+    } else {
+      // Neither Android nor iOS detected (e.g., desktop)
+      // You can redirect them to a generic landing page or just stay here.
+      // For now, let’s just show a message or redirect to your website:
+      window.location.href = "https://example.com";
+    }
+  </script>
+</body>
+</html>
